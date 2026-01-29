@@ -4,26 +4,26 @@ export const mockShipments = [
     id: "1",
     trackingNumber: "TRK-7721-X9",
     status: "In Transit",
-    lastLocation: "Distribution Center, Chicago",
-    estimatedDelivery: "2024-03-30",
+    lastLocation: "Warehouse A",
+    estimatedDelivery: "2026-02-01",
     sender: "TechGear Pro",
-    receiver: "Alice Johnson"
+    receiver: "Bhanu Prakash"
   },
   {
     id: "2",
     trackingNumber: "TRK-1102-B2",
     status: "Delivered",
-    lastLocation: "Front Porch, Seattle",
-    estimatedDelivery: "2024-03-22",
+    lastLocation: "New Delhi, Dwarka",
+    estimatedDelivery: "2026-01-31",
     sender: "Amazon Logistics",
-    receiver: "Bob Smith"
+    receiver: "Abhishek Kushwaha"
   },
   {
     id: "3",
     trackingNumber: "TRK-4490-Z1",
     status: "Pending",
-    lastLocation: "Warehouse A, New Jersey",
-    estimatedDelivery: "2024-04-05",
+    lastLocation: "Warehouse A, Mumbai",
+    estimatedDelivery: "2026-02-05",
     sender: "Fashion Hub",
     receiver: "Charlie Davis"
   },
@@ -34,6 +34,6 @@ export const mockShipments = [
     lastLocation: "N/A",
     estimatedDelivery: "N/A",
     sender: "Vintage Finds",
-    receiver: "Diana Prince"
+    receiver: "Khushi Yadav"
   }
 ];
