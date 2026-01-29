@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { mockShipments } from '../data/mockData';
 import ShipmentCard from './ShipmentCard';
 import FilterBar from './FilterBar';
+import Modal from './Modal';
 import { Activity, PackageCheck, Truck, SearchX } from 'lucide-react';
 
 const ShipmentList = () => {
@@ -10,7 +11,14 @@ const ShipmentList = () => {
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
-  const [sortBy, setSortBy] = useState("latest"); // New State for Sorting
+  const [sortBy, setSortBy] = useState("latest"); // New State for 
+  const [selectedShipment,setSelectedShipment] = useState(null)
+  const [isModalOpen,setIsModalOpen] = useState(false)
+
+  const handleViewDetails = (shipment) =>{
+    setSelectedShipment(shipment)
+    setIsModalOpen(true)
+  }
 
   const fetchData = async () => {
     try {
@@ -100,7 +108,7 @@ const ShipmentList = () => {
           {processedShipments.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {processedShipments.map(shipment => (
-                <ShipmentCard key={shipment.id} shipment={shipment} />
+                <ShipmentCard key={shipment.id} shipment={shipment} onViewDetails = {()=> handleViewDetails(shipment)} />
               ))}
             </div>
           ) : (
@@ -120,6 +128,13 @@ const ShipmentList = () => {
           )}
         </>
       )}
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={()=> setIsModalOpen(false)}    
+        shipment={selectedShipment}
+      
+      />
     </div>
   );
 };

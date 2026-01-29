@@ -3,7 +3,7 @@ import React from 'react';
 import { Package, MapPin, Calendar, User, ArrowRight } from 'lucide-react';
 import StatusBadge from './StatusBadge';
 
-const ShipmentCard = ({ shipment }) => {
+const ShipmentCard = ({ shipment , onViewDetails }) => {
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
       <div className="p-5">
@@ -45,7 +45,7 @@ const ShipmentCard = ({ shipment }) => {
           <span className="text-xs text-gray-600 font-medium">{shipment.receiver}</span>
         </div>
         <button 
-          onClick={() => console.log('Details for:', shipment.trackingNumber)}
+          onClick={onViewDetails}
           className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
         >
           View Details <ArrowRight size={14} />
