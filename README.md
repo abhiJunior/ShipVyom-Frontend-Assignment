@@ -24,8 +24,8 @@ A simplified, interactive web dashboard component to track and manage logistics 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/shipment-dashboard.git
-cd shipment-dashboard
+git clone https://github.com/abhiJunior/ShipVyom-Frontend-Assignment.git
+cd client
 ```
 
 2. Install dependencies
